@@ -1,0 +1,17 @@
+name: deply para parecer gringo
+on:
+  push:
+    branches:
+      -main
+jobs:
+  deploy-page:
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Checkout 🔔
+        uses: actions/checkout@v2.3.1
+
+      - name: Deploy
+        uses: JamesIves/github-page-deploy-action@4.1.4
+        with:
+          branch: gh-pages 
+          folder: .
